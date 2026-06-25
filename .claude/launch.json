@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "adore-site", "runtimeExecutable": "python3", "runtimeArgs": ["/tmp/adore_serve.py"], "port": 4178 }
+  ]
+}

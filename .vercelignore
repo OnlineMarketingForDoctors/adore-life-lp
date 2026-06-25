@@ -1,0 +1,8 @@
+Assets
+serve.py
+.claude
+*.docx
+node_modules
+.DS_Store
+site/images/generated
+site/images/beforeafter
