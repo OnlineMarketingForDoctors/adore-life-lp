@@ -643,8 +643,8 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
       </div>
       <div class="ba-card" data-patient="1">
         <div class="ba-pair">
-          <figure><img src="images/web/fl_p2_before.jpg" alt="Before face and neck lift, profile" style="transform:scale(1.1);transform-origin:35% 48%"><figcaption>Before</figcaption></figure>
-          <figure><img src="images/web/fl_p2_after.jpg" alt="After face and neck lift, profile"><figcaption>After</figcaption></figure>
+          <figure><img src="images/web/fl_p2_before.jpg" alt="Before face and neck lift, profile"><figcaption>Before</figcaption></figure>
+          <figure><img src="images/web/fl_p2_after.jpg" alt="After face and neck lift, profile" style="transform:scale(1.1);transform-origin:35% 48%"><figcaption>After</figcaption></figure>
         </div>
         <div class="ba-meta"><span class="pt">Profile view</span><span class="pp">Face &amp; neck lift, smoother neck &amp; defined jaw</span></div>
       </div>
@@ -1068,7 +1068,7 @@ var reviews=[
 // before & after gallery (4 patients, shown 2 cards at a time)
 const baData=[
   {b:'images/web/fl_p1_before.jpg',a:'images/web/fl_p1_after.jpg',pt:'Three-quarter view',pp:'Lower face & neck lift, lifted jowls & tighter jawline'},
-  {b:'images/web/fl_p2_before.jpg',a:'images/web/fl_p2_after.jpg',pt:'Profile view',pp:'Face & neck lift, smoother neck & defined jaw',bStyle:'transform:scale(1.1);transform-origin:35% 48%'}
+  {b:'images/web/fl_p2_before.jpg',a:'images/web/fl_p2_after.jpg',pt:'Profile view',pp:'Face & neck lift, smoother neck & defined jaw',aStyle:'transform:scale(1.1);transform-origin:35% 48%'}
 ];
 const cards=document.querySelectorAll('.ba-card');
 const dotsWrap=document.getElementById('baDots');
@@ -1100,7 +1100,7 @@ renderBA();
   var dotsWrap=document.getElementById('heroDots');
   var pairs=[
     {b:'images/web/fl_p1_before.jpg',a:'images/web/fl_p1_after.jpg'},
-    {b:'images/web/fl_p2_before.jpg',a:'images/web/fl_p2_after.jpg',bT:'scale(1.1)',bO:'35% 48%'}
+    {b:'images/web/fl_p2_before.jpg',a:'images/web/fl_p2_after.jpg',aT:'scale(1.1)',aO:'35% 48%'}
   ];
   // preload
   pairs.forEach(function(p){var i1=new Image();i1.src=p.b;var i2=new Image();i2.src=p.a;});
