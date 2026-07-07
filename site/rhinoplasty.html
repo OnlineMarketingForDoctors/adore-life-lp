@@ -507,13 +507,48 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
   .creds-row{gap:1.8rem 1.4rem}
   .cred{flex:1 1 38%}
 }
+
+/* ---------- light hero + header (rhinoplasty) ---------- */
+header:not(.scrolled) nav.main a.navlink{color:var(--text)}
+header:not(.scrolled) nav.main a.navlink:hover{color:var(--ink)}
+header:not(.scrolled) .header-phone{color:var(--ink)}
+header:not(.scrolled) .header-phone svg{stroke:var(--accent-d)}
+header:not(.scrolled) .header-cta{color:var(--ink);border-color:rgba(20,18,15,.35)}
+header:not(.scrolled) .burger span{background:var(--ink)}
+header:not(.scrolled) .hicon{color:var(--ink)}
+header.scrolled{background:rgba(245,241,234,.95);box-shadow:0 1px 0 rgba(20,18,15,.08)}
+header.scrolled nav.main a.navlink{color:var(--text)}
+header.scrolled nav.main a.navlink:hover{color:var(--ink)}
+header.scrolled .header-phone{color:var(--ink)}
+header.scrolled .header-cta{color:var(--ink);border-color:rgba(20,18,15,.35)}
+header.scrolled .header-cta:hover{background:var(--ink);color:#fff}
+header.scrolled .burger span{background:var(--ink)}
+header.scrolled .hicon{color:var(--ink)}
+.hero{background:var(--bg);color:var(--text)}
+.hero-bg img{object-position:78% center;opacity:1}
+.hero-bg::after{background:linear-gradient(90deg,rgba(245,241,234,.96) 0%,rgba(245,241,234,.72) 34%,rgba(245,241,234,.12) 60%,rgba(245,241,234,0) 80%)}
+.hero-eyebrow{color:var(--accent-d)}
+.hero-eyebrow::before{background:var(--accent-d)}
+.hero h1{color:var(--ink)}
+.hero h1 em{color:var(--accent-d)}
+.hero-points{grid-template-columns:1fr;max-width:33ch}
+.hero-points li{color:var(--text)}
+.hero-points svg{stroke:var(--accent-d)}
+.hero-rating .rs{color:var(--muted)}
+.hero-rating .rs b{color:var(--ink)}
+.realself-word{color:var(--ink)}
+.realself-word i{color:var(--accent-d)}
+.stars{color:#e0a63a}
+.hero .btn-ghost-light{border-color:var(--ink);color:var(--ink)}
+.hero .btn-ghost-light:hover{background:var(--ink);color:#fff}
+.hero-ba{display:none}
 </style>
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
 <header id="header">
-  <a href="#top" class="logo"><img src="images/adore-white.png" alt="Adore Life · Hagen Schumacher Plastic Surgeon" /></a>
+  <a href="#top" class="logo"><img src="images/adore-ink.png" alt="Adore Life · Hagen Schumacher Plastic Surgeon" /></a>
   <nav class="main">
     <a class="navlink" href="#approach">Approach</a>
     <a class="navlink" href="#results">Results</a>
@@ -545,7 +580,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-bg"><img src="images/web/hero-camera.jpg" alt="Mr Hagen Schumacher, consultant plastic surgeon" /></div>
+  <div class="hero-bg"><img src="images/web/hero-hagen.jpg" alt="Mr Hagen Schumacher, consultant plastic surgeon" /></div>
   <div class="hero-inner">
     <span class="eyebrow hero-eyebrow">Rhinoplasty · London &amp; Cambridge</span>
     <h1>Rhinoplasty that refines your profile <em>and keeps you looking like you.</em></h1>
@@ -759,8 +794,8 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 <section class="section meet" id="surgeon">
   <div class="wrap split">
     <div class="meet-imgs reveal">
-      <img class="main" src="images/web/meet.jpg" alt="Mr Hagen Schumacher at his consulting desk" />
-      <div class="inset"><img src="images/web/exam.jpg" alt="Mr Schumacher assessing a patient's nose" /></div>
+      <img class="main" src="images/web/meet-c.jpg" alt="Mr Hagen Schumacher at his consulting desk" />
+      <div class="inset"><img src="images/web/exam-c.jpg" alt="Mr Schumacher assessing a patient's nose" /></div>
     </div>
     <div class="meet-body reveal">
       <span class="eyebrow">Your surgeon</span>
@@ -815,7 +850,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 <section class="section expect">
   <div class="wrap split">
     <div class="expect-img reveal">
-      <img src="images/web/exam.jpg" alt="Mr Schumacher in consultation" />
+      <img src="images/web/exam-c.jpg" alt="Mr Schumacher in consultation" />
     </div>
     <div class="reveal">
       <span class="eyebrow">Your journey</span>
