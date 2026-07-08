@@ -136,7 +136,7 @@ nav.main a.navlink:hover{color:#fff}
 .hero-eyebrow{color:var(--accent-l)}
 .hero-eyebrow::before{background:var(--accent-l)}
 .hero h1{
-  font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.04;font-weight:200;color:#fff;
+  font-size:clamp(2.1rem,5vw,4rem);line-height:1.08;font-weight:200;color:#fff;
   margin:1.6rem 0 0;letter-spacing:-.005em;max-width:16ch;
 }
 .hero h1 em{font-style:normal;color:var(--accent-l);display:block;font-weight:300}
@@ -258,6 +258,14 @@ nav.main a.navlink:hover{color:#fff}
 .split-img{position:relative}
 .split-img img{width:100%;aspect-ratio:4/5;object-fit:cover}
 .split-img .frame{position:absolute;top:-16px;left:-16px;width:90px;height:90px;border:1px solid var(--accent);opacity:.5}
+.video-embed{position:relative;aspect-ratio:3/4;overflow:hidden;background:#000;cursor:pointer}
+.video-embed .video-poster{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;display:block;transition:transform .6s ease,filter .3s ease}
+.video-embed:hover .video-poster{transform:scale(1.03)}
+.video-play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:74px;height:74px;border-radius:50%;border:0;background:rgba(255,255,255,.92);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .3s ease,background .3s ease;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.video-embed:hover .video-play-btn{transform:translate(-50%,-50%) scale(1.08);background:#fff}
+.video-play-btn svg{width:26px;height:26px;fill:var(--ink);margin-left:4px}
+.video-embed.playing .video-poster,.video-embed.playing .video-play-btn{display:none}
+.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
 /* ---------- at a glance ---------- */
 .glance{position:relative;background:#0c0b0a;color:#e9e3d9;overflow:hidden}
@@ -692,18 +700,6 @@ header.scrolled .hicon{color:var(--ink)}
   </div>
 </section>
 
-<!-- ============ OPEN VS CLOSED VIDEO ============ -->
-<section class="section" id="open-closed">
-  <div class="wrap reveal" style="max-width:900px;margin:0 auto;text-align:center">
-    <span class="eyebrow center">Technique</span>
-    <h2 class="display" style="margin:1rem 0 1rem">Open vs closed <em>rhinoplasty.</em></h2>
-    <p class="lead" style="margin:0 auto 2.4rem;max-width:60ch">In under a minute, Mr Schumacher explains the difference between an open and a closed rhinoplasty, and why he favours a closed approach wherever possible, leaving no visible external scar.</p>
-    <div style="position:relative;width:100%;padding-bottom:56.25%;height:0;overflow:hidden;border:1px solid var(--line);background:#000">
-      <iframe src="https://drive.google.com/file/d/1Pww03lkLzXphZXqACPhZdy0RWdJ94DUq/preview" allow="autoplay; fullscreen" allowfullscreen loading="lazy" title="Open vs closed rhinoplasty explained by Mr Hagen Schumacher" style="position:absolute;top:0;left:0;width:100%;height:100%;border:0"></iframe>
-    </div>
-  </div>
-</section>
-
 <!-- ============ BENEFITS ============ -->
 <section class="section benefits">
   <div class="wrap split">
@@ -724,7 +720,12 @@ header.scrolled .hicon{color:var(--ink)}
     </div>
     <div class="split-img reveal">
       <div class="frame"></div>
-      <img src="images/web/benefits.jpg" alt="A woman with a refined, natural nose" />
+      <div class="video-embed" data-video="https://drive.google.com/file/d/1Pww03lkLzXphZXqACPhZdy0RWdJ94DUq/preview">
+        <img class="video-poster" src="images/web/video-poster.jpg" alt="Mr Schumacher explains open versus closed rhinoplasty" />
+        <button class="video-play-btn" type="button" aria-label="Play the video">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+      </div>
     </div>
   </div>
 </section>
@@ -795,7 +796,6 @@ header.scrolled .hicon{color:var(--ink)}
   <div class="wrap split">
     <div class="meet-imgs reveal">
       <img class="main" src="images/web/meet-c.jpg" alt="Mr Hagen Schumacher at his consulting desk" />
-      <div class="inset"><img src="images/web/exam-c.jpg" alt="Mr Schumacher assessing a patient's nose" /></div>
     </div>
     <div class="meet-body reveal">
       <span class="eyebrow">Your surgeon</span>
@@ -1042,6 +1042,21 @@ header.scrolled .hicon{color:var(--ink)}
 <a class="wa-float" href="https://wa.me/442030867371" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.04.55 4.02 1.6 5.77L4 28l7.34-2.5a11.06 11.06 0 0 0 4.7 1.05h.01c6.11 0 11.07-4.96 11.07-11.07C27.12 8.96 22.15 4 16.04 4zm0 20.27c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-4.36 1.49 1.46-4.25-.2-.31a9.2 9.2 0 0 1-1.41-4.9c0-5.08 4.13-9.21 9.22-9.21 2.46 0 4.78.96 6.52 2.7a9.16 9.16 0 0 1 2.7 6.52c0 5.09-4.13 9.22-9.22 9.22zm5.05-6.9c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.35-.25.28-.96.94-.96 2.3 0 1.36.98 2.67 1.12 2.85.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/></svg></a>
 
 <script>
+// click-to-play video (custom thumbnail -> Drive embed)
+document.querySelectorAll('.video-embed').forEach(el=>{
+  el.addEventListener('click',()=>{
+    if(el.classList.contains('playing'))return;
+    const url=el.dataset.video;
+    const f=document.createElement('iframe');
+    f.src=url+(url.includes('?')?'&':'?')+'autoplay=1';
+    f.setAttribute('allow','autoplay; fullscreen');
+    f.setAttribute('allowfullscreen','');
+    f.setAttribute('title','Open vs closed rhinoplasty explained by Mr Hagen Schumacher');
+    el.appendChild(f);
+    el.classList.add('playing');
+  });
+});
+
 // sticky header
 const header=document.getElementById('header');
 window.addEventListener('scroll',()=>{
