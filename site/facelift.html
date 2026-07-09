@@ -511,12 +511,12 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .cal-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,28px)}
 .cal-modal.open{display:flex}
 .cal-modal-backdrop{position:absolute;inset:0;background:rgba(16,14,12,.62);backdrop-filter:blur(3px)}
-.cal-modal-dialog{position:relative;width:min(520px,96vw);max-height:92vh;background:var(--card);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;animation:calpop .35s ease}
+.cal-modal-dialog{position:relative;width:min(520px,96vw);height:min(760px,92vh);background:var(--card);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;animation:calpop .35s ease}
 @keyframes calpop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .cal-modal-close{position:absolute;top:8px;right:10px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
 .cal-modal-close:hover{background:#fff;transform:scale(1.08)}
-.cal-modal-body{flex:1 1 auto;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0}
-.cal-modal-body iframe{width:100%;min-height:640px;border:0;display:block}
+.cal-modal-body{flex:1 1 auto;min-height:0;overflow:hidden;padding:0;background:#fff}
+.cal-modal-body iframe{width:100%;height:100%;border:0;display:block}
 @media(prefers-reduced-motion:reduce){.cal-modal-dialog{animation:none}}
 </style>
 </head>
@@ -1016,7 +1016,6 @@ document.addEventListener('DOMContentLoaded',function(){
       const f=document.createElement('iframe');
       f.src='https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5';
       f.id='gP6OILBAfsHTGJUOpAU5_'+Date.now();
-      f.setAttribute('scrolling','no');
       f.setAttribute('title','Book a consultation with Mr Schumacher');
       body.appendChild(f);
       loaded=true;
@@ -1189,6 +1188,5 @@ document.getElementById('enquireForm').addEventListener('submit',function(){
     <div class="cal-modal-body"></div>
   </div>
 </div>
-<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" defer></script>
 </body>
 </html>
