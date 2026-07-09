@@ -267,6 +267,17 @@ nav.main a.navlink:hover{color:#fff}
 .video-embed.playing .video-poster,.video-embed.playing .video-play-btn{display:none}
 .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .video-caption{margin-top:1rem;font-size:.82rem;line-height:1.55;color:var(--muted);font-weight:300;font-style:italic;max-width:42ch}
+/* ---------- booking modal ---------- */
+.cal-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,28px)}
+.cal-modal.open{display:flex}
+.cal-modal-backdrop{position:absolute;inset:0;background:rgba(16,14,12,.62);backdrop-filter:blur(3px)}
+.cal-modal-dialog{position:relative;width:min(520px,96vw);max-height:92vh;background:var(--card);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;animation:calpop .35s ease}
+@keyframes calpop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.cal-modal-close{position:absolute;top:8px;right:10px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
+.cal-modal-close:hover{background:#fff;transform:scale(1.08)}
+.cal-modal-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:0}
+.cal-modal-body iframe{width:100%;min-height:640px;border:0;display:block}
+@media(prefers-reduced-motion:reduce){.cal-modal-dialog{animation:none}}
 
 /* ---------- at a glance ---------- */
 .glance{position:relative;background:#0c0b0a;color:#e9e3d9;overflow:hidden}
@@ -570,8 +581,8 @@ header.scrolled .hicon{color:var(--ink)}
       <svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
       +44 (0)203 086 7371
     </a>
-    <a class="header-cta" href="https://calendar.app.google/E3YbtyqqM5GFYFiy7" target="_blank" rel="noopener">Book a Free Discovery Call</a>
-    <a class="hbook" href="https://calendar.app.google/E3YbtyqqM5GFYFiy7" target="_blank" rel="noopener">Book now</a>
+    <a class="header-cta" href="https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5" target="_blank" rel="noopener" data-book>Book a Consultation</a>
+    <a class="hbook" href="https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5" target="_blank" rel="noopener" data-book>Book now</a>
     <a class="hicon hicon-phone" href="tel:+442030867371" aria-label="Call us"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
     <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
@@ -584,7 +595,7 @@ header.scrolled .hicon{color:var(--ink)}
   <a href="#surgeon">Mr <em>Schumacher</em></a>
   <a href="#fees">Fees</a>
   <a href="#faq">FAQ</a>
-  <a href="https://calendar.app.google/E3YbtyqqM5GFYFiy7" target="_blank" rel="noopener" style="font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-l)">Book a Free Discovery Call</a>
+  <a href="https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5" target="_blank" rel="noopener" data-book style="font-size:1rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent-l)">Book a Consultation</a>
 </div>
 
 <!-- ============ HERO ============ -->
@@ -601,7 +612,7 @@ header.scrolled .hicon{color:var(--ink)}
       <li><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6"><path d="M20 6 9 17l-5-5"/></svg>Our results are backed by strong patient feedback</li>
     </ul>
     <div class="hero-actions">
-      <a href="https://calendar.app.google/E3YbtyqqM5GFYFiy7" target="_blank" rel="noopener" class="btn btn-light">Book a Free Discovery Call</a>
+      <a href="https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5" target="_blank" rel="noopener" data-book class="btn btn-light">Book a Consultation</a>
       <a href="tel:+442030867371" class="btn btn-ghost-light">Call us now</a>
     </div>
     <a class="hero-rating" href="https://www.realself.com/dr/hagen-schumacher-london-united-kingdom#reviews" target="_blank" rel="noopener" aria-label="Read verified reviews on RealSelf">
@@ -787,7 +798,7 @@ header.scrolled .hicon{color:var(--ink)}
     <span class="eyebrow center">Begin</span>
     <h2>Ready to see what a refined nose could <em>do for your profile?</em></h2>
     <div class="actions">
-      <a href="https://calendar.app.google/E3YbtyqqM5GFYFiy7" target="_blank" rel="noopener" class="btn btn-light">Book a Free Discovery Call</a>
+      <a href="https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5" target="_blank" rel="noopener" data-book class="btn btn-light">Book a Consultation</a>
       <a href="#fees" class="btn btn-ghost-light">View fees</a>
     </div>
   </div>
@@ -1059,6 +1070,31 @@ document.querySelectorAll('.video-embed').forEach(el=>{
   });
 });
 
+// booking modal (GoHighLevel calendar popup)
+document.addEventListener('DOMContentLoaded',function(){
+  const modal=document.getElementById('calModal');
+  if(!modal)return;
+  const body=modal.querySelector('.cal-modal-body');
+  let loaded=false;
+  function open(){
+    if(!loaded){
+      const f=document.createElement('iframe');
+      f.src='https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5';
+      f.id='gP6OILBAfsHTGJUOpAU5_'+Date.now();
+      f.setAttribute('scrolling','no');
+      f.setAttribute('title','Book a consultation with Mr Schumacher');
+      body.appendChild(f);
+      loaded=true;
+    }
+    modal.classList.add('open');
+    document.body.style.overflow='hidden';
+  }
+  function close(){modal.classList.remove('open');document.body.style.overflow='';}
+  document.querySelectorAll('[data-book]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();open();}));
+  modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
+});
+
 // sticky header
 const header=document.getElementById('header');
 window.addEventListener('scroll',()=>{
@@ -1211,5 +1247,15 @@ document.getElementById('enquireForm').addEventListener('submit',function(){
   const btn=this.querySelector('button');btn.textContent='Thank you, we will be in touch';btn.style.background='var(--accent-d)';
 });
 </script>
+
+<!-- ============ BOOKING MODAL ============ -->
+<div class="cal-modal" id="calModal" aria-hidden="true">
+  <div class="cal-modal-backdrop" data-close></div>
+  <div class="cal-modal-dialog" role="dialog" aria-modal="true" aria-label="Book a consultation">
+    <button class="cal-modal-close" type="button" data-close aria-label="Close">&times;</button>
+    <div class="cal-modal-body"></div>
+  </div>
+</div>
+<script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript" defer></script>
 </body>
 </html>
