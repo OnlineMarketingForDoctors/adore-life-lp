@@ -136,7 +136,7 @@ nav.main a.navlink:hover{color:#fff}
 .hero-eyebrow{color:var(--accent-l)}
 .hero-eyebrow::before{background:var(--accent-l)}
 .hero h1{
-  font-size:clamp(2.6rem,6.4vw,5.2rem);line-height:1.04;font-weight:200;color:#fff;
+  font-size:clamp(2.1rem,5vw,4rem);line-height:1.08;font-weight:200;color:#fff;
   margin:1.6rem 0 0;letter-spacing:-.005em;max-width:16ch;
 }
 .hero h1 em{font-style:normal;color:var(--accent-l);display:block;font-weight:300}
@@ -528,13 +528,48 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .consult-card .cprice.alt{font-size:1.15rem}
 .consult-card p{font-size:.92rem;color:var(--muted);font-weight:300;line-height:1.75}
 @media(max-width:760px){.consult-grid{grid-template-columns:1fr}}
+
+/* ---------- light hero + header (match rhinoplasty) ---------- */
+header:not(.scrolled) nav.main a.navlink{color:var(--text)}
+header:not(.scrolled) nav.main a.navlink:hover{color:var(--ink)}
+header:not(.scrolled) .header-phone{color:var(--ink)}
+header:not(.scrolled) .header-phone svg{stroke:var(--accent-d)}
+header:not(.scrolled) .header-cta{color:var(--ink);border-color:rgba(20,18,15,.35)}
+header:not(.scrolled) .burger span{background:var(--ink)}
+header:not(.scrolled) .hicon{color:var(--ink)}
+header.scrolled{background:rgba(245,241,234,.95);box-shadow:0 1px 0 rgba(20,18,15,.08)}
+header.scrolled nav.main a.navlink{color:var(--text)}
+header.scrolled nav.main a.navlink:hover{color:var(--ink)}
+header.scrolled .header-phone{color:var(--ink)}
+header.scrolled .header-cta{color:var(--ink);border-color:rgba(20,18,15,.35)}
+header.scrolled .header-cta:hover{background:var(--ink);color:#fff}
+header.scrolled .burger span{background:var(--ink)}
+header.scrolled .hicon{color:var(--ink)}
+.hero{background:var(--bg);color:var(--text)}
+.hero-bg img{object-position:78% center;opacity:1}
+.hero-bg::after{background:linear-gradient(90deg,rgba(245,241,234,.96) 0%,rgba(245,241,234,.72) 34%,rgba(245,241,234,.12) 60%,rgba(245,241,234,0) 80%)}
+.hero-eyebrow{color:var(--accent-d)}
+.hero-eyebrow::before{background:var(--accent-d)}
+.hero h1{color:var(--ink)}
+.hero h1 em{color:var(--accent-d)}
+.hero-points{grid-template-columns:1fr;max-width:33ch}
+.hero-points li{color:var(--text)}
+.hero-points svg{stroke:var(--accent-d)}
+.hero-rating .rs{color:var(--muted)}
+.hero-rating .rs b{color:var(--ink)}
+.realself-word{color:var(--ink)}
+.realself-word i{color:var(--accent-d)}
+.stars{color:#e0a63a}
+.hero .btn-ghost-light{border-color:var(--ink);color:var(--ink)}
+.hero .btn-ghost-light:hover{background:var(--ink);color:#fff}
+.hero-ba{display:none}
 </style>
 </head>
 <body>
 
 <!-- ============ HEADER ============ -->
 <header id="header">
-  <a href="#top" class="logo"><img src="images/adore-white.png" alt="Adore Life · Hagen Schumacher Plastic Surgeon" /></a>
+  <a href="#top" class="logo"><img src="images/adore-ink.png" alt="Adore Life · Hagen Schumacher Plastic Surgeon" /></a>
   <nav class="main">
     <a class="navlink" href="#approach">Approach</a>
     <a class="navlink" href="#results">Results</a>
@@ -568,7 +603,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
-  <div class="hero-bg"><img src="images/web/hero-camera.jpg" alt="Hagen Schumacher, consultant plastic surgeon" /></div>
+  <div class="hero-bg"><img src="images/web/hero-hagen.jpg" alt="Hagen Schumacher, consultant plastic surgeon" /></div>
   <div class="hero-inner">
     <span class="eyebrow hero-eyebrow">Deep Plane Face &amp; Neck Lift · London &amp; Cambridge</span>
     <h1>A face lift that lifts the years away <em>and still looks like you.</em></h1>
@@ -770,8 +805,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 <section class="section meet" id="surgeon">
   <div class="wrap split">
     <div class="meet-imgs reveal">
-      <img class="main" src="images/web/meet.jpg" alt="Hagen Schumacher at his consulting desk" />
-      <div class="inset"><img src="images/web/exam.jpg" alt="Hagen assessing a patient's face and neck" /></div>
+      <img class="main" src="images/web/meet-c.jpg" alt="Hagen Schumacher at his consulting desk" />
     </div>
     <div class="meet-body reveal">
       <span class="eyebrow">Your surgeon</span>
@@ -828,12 +862,12 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
   <div class="wrap reveal" style="max-width:900px;margin:0 auto;text-align:center">
     <span class="eyebrow center">Your consultation</span>
     <h2 class="display" style="margin:1rem 0 1rem">Your consultation <em>with Hagen.</em></h2>
-    <p class="lead" style="margin:0 auto;max-width:62ch">Every journey begins with a consultation — an unhurried, honest conversation where Hagen listens to your goals, examines you carefully and gives you a realistic sense of what surgery can and cannot achieve, along with a clear plan and a fixed quote.</p>
+    <p class="lead" style="margin:0 auto;max-width:62ch">Every journey begins with a consultation, an unhurried, honest conversation where Hagen listens to your goals, examines you carefully and gives you a realistic sense of what surgery can and cannot achieve, along with a clear plan and a fixed quote.</p>
   </div>
   <div class="consult-grid reveal">
     <div class="consult-card">
       <div class="chead"><h3>Formal consultation</h3><span class="cprice">£250</span></div>
-      <p>A thorough one-to-one assessment with Hagen — in person or virtually — covering your goals, a detailed examination, your options and an honest recommendation, followed by a clear, fixed quote. A formal consultation is a required step before any surgery.</p>
+      <p>A thorough one-to-one assessment with Hagen, in person or virtually, covering your goals, a detailed examination, your options and an honest recommendation, followed by a clear, fixed quote. A formal consultation is a required step before any surgery.</p>
     </div>
     <div class="consult-card">
       <div class="chead"><h3>Informal online chat</h3><span class="cprice alt">10 min</span></div>
@@ -846,7 +880,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 <section class="section expect">
   <div class="wrap split">
     <div class="expect-img reveal">
-      <img src="images/web/exam.jpg" alt="Hagen in consultation" />
+      <img src="images/web/exam-c.jpg" alt="Hagen in consultation" />
     </div>
     <div class="reveal">
       <span class="eyebrow">Your journey</span>
