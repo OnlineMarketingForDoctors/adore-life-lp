@@ -69,7 +69,7 @@ h2.display{
   color:var(--ink);
   letter-spacing:0;
 }
-h2.display em{font-style:normal;color:var(--accent-d);font-weight:300}
+h2.display em{font-style:normal;color:var(--ink);font-weight:300}
 .lead{font-size:1.02rem;color:var(--muted);max-width:46ch;font-weight:300}
 .section{padding:clamp(70px,9vw,130px) var(--pad)}
 .wrap{max-width:var(--maxw);margin:0 auto}
@@ -370,7 +370,7 @@ nav.main a.navlink:hover{color:#fff}
 .loc-img img{width:100%;height:100%;object-fit:cover;min-height:380px}
 .loc-body{background:var(--bg);padding:clamp(3rem,6vw,6rem) clamp(2rem,5vw,5rem);display:flex;flex-direction:column;justify-content:center}
 .loc-body h2{font-size:clamp(1.8rem,3.4vw,2.7rem);color:var(--ink);font-weight:500;margin:1.2rem 0 1.6rem}
-.loc-body h2 em{font-style:italic;color:var(--accent-d)}
+.loc-body h2 em{font-style:italic;color:var(--ink)}
 .loc-line{display:flex;gap:.9rem;align-items:flex-start;padding:.55rem 0;font-size:.92rem;color:var(--text);font-weight:300}
 .loc-line svg{width:16px;height:16px;stroke:var(--accent-d);flex:0 0 auto;margin-top:5px}
 .loc-line a:hover{color:var(--accent-d)}
@@ -389,7 +389,7 @@ nav.main a.navlink:hover{color:#fff}
 .loc-info h3{font-family:'Cormorant Garamond';font-size:clamp(1.7rem,3vw,2.4rem);font-weight:500;color:var(--ink);line-height:1.1}
 .loc-block.dark .loc-info h3{color:#fff}
 .loc-block.dark .loc-info h3 em{color:var(--accent-l)}
-.loc-info h3 em{font-style:italic;color:var(--accent-d)}
+.loc-info h3 em{font-style:italic;color:var(--ink)}
 .loc-intro{font-size:.92rem;color:var(--muted);font-weight:300;margin:1rem 0 1.6rem;max-width:42ch}
 .loc-block.dark .loc-intro{color:rgba(233,227,217,.72)}
 .loc-block.dark .loc-line{color:rgba(233,227,217,.92)}
@@ -398,6 +398,7 @@ nav.main a.navlink:hover{color:#fff}
 .loc-visual{position:relative;overflow:hidden;background:#dcd7cf;min-height:340px}
 .loc-visual img,.loc-visual iframe{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border:0;filter:grayscale(1) contrast(1.02)}
 .loc-block.dark .loc-visual{background:#1a1714}
+.loc-block.light .loc-visual{order:-1}
 .loc-actions{margin-top:2rem}
 
 /* ---------- enquire ---------- */
@@ -409,7 +410,7 @@ nav.main a.navlink:hover{color:#fff}
 .form-card{background:#fff;padding:clamp(2rem,4.5vw,4rem);box-shadow:0 30px 70px rgba(20,18,15,.1);border:1px solid var(--line)}
 .form-card .head{text-align:center;margin-bottom:2rem}
 .form-card h2{font-size:clamp(1.8rem,3.4vw,2.6rem);color:var(--ink);font-weight:500;line-height:1.08}
-.form-card h2 em{font-style:italic;color:var(--accent-d)}
+.form-card h2 em{font-style:italic;color:var(--ink)}
 .form-card .sub{font-size:.85rem;color:var(--muted);margin-top:.8rem;font-weight:300}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .field{margin-top:1rem}
@@ -553,7 +554,7 @@ header.scrolled .hicon{color:var(--ink)}
 .hero-eyebrow{color:var(--accent-d)}
 .hero-eyebrow::before{background:var(--accent-d)}
 .hero h1{color:var(--ink)}
-.hero h1 em{color:var(--accent-d)}
+.hero h1 em{color:var(--ink)}
 .hero-points{grid-template-columns:1fr;max-width:33ch}
 .hero-points li{color:var(--text)}
 .hero-points svg{stroke:var(--accent-d)}
