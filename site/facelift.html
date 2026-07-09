@@ -516,7 +516,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .cal-modal-close{position:absolute;top:8px;right:10px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
 .cal-modal-close:hover{background:#fff;transform:scale(1.08)}
 .cal-modal-body{flex:1 1 auto;min-height:0;overflow:hidden;padding:0;background:#fff}
-.cal-modal-body iframe{width:100%;height:100%;border:0;display:block}
+.cal-modal-body iframe{width:100%;height:100%!important;border:0;display:block}
 @media(prefers-reduced-motion:reduce){.cal-modal-dialog{animation:none}}
 </style>
 </head>
@@ -945,28 +945,23 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
         <h2>Begin with a quiet <em>conversation.</em></h2>
         <p class="sub">Tell us a little about what you are considering. We reply personally, within one working day.</p>
       </div>
-      <form id="enquireForm" onsubmit="return false;">
-        <div class="form-row">
-          <div class="field"><input type="text" placeholder="First name" required></div>
-          <div class="field"><input type="text" placeholder="Last name" required></div>
-        </div>
-        <div class="field"><input type="tel" placeholder="Phone *" required></div>
-        <div class="field"><input type="email" placeholder="Email *" required></div>
-        <div class="field">
-          <select required>
-            <option value="" disabled selected>How did you find us?</option>
-            <option>Google search</option>
-            <option>Instagram</option>
-            <option>RealSelf</option>
-            <option>Referral from a friend</option>
-            <option>Referred by my GP or doctor</option>
-            <option>Other</option>
-          </select>
-        </div>
-        <div class="field"><textarea placeholder="Leave a message or comment"></textarea></div>
-        <button type="submit" class="btn btn-solid">Submit enquiry</button>
-        <p class="privacy">Your enquiry is private and handled with complete discretion.</p>
-      </form>
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/jPGPZTIHDttkfBs31v74"
+        style="width:100%;min-height:600px;border:none;border-radius:8px;display:block"
+        id="inline-jPGPZTIHDttkfBs31v74"
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Contact Form - LP"
+        data-height="544"
+        data-layout-iframe-id="inline-jPGPZTIHDttkfBs31v74"
+        data-form-id="jPGPZTIHDttkfBs31v74"
+        title="Contact Form - LP"></iframe>
+      <p class="privacy">Your enquiry is private and handled with complete discretion.</p>
     </div>
   </div>
 </section>
@@ -1174,10 +1169,6 @@ const io=new IntersectionObserver((entries)=>{
 },{threshold:0.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 
-// form
-document.getElementById('enquireForm').addEventListener('submit',function(){
-  const btn=this.querySelector('button');btn.textContent='Thank you, we will be in touch';btn.style.background='var(--accent-d)';
-});
 </script>
 
 <!-- ============ BOOKING MODAL ============ -->
@@ -1188,5 +1179,6 @@ document.getElementById('enquireForm').addEventListener('submit',function(){
     <div class="cal-modal-body"></div>
   </div>
 </div>
+<script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
 </body>
 </html>
