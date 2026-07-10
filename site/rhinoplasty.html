@@ -275,6 +275,8 @@ nav.main a.navlink:hover{color:#fff}
 @keyframes calpop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .cal-modal-close{position:absolute;top:8px;right:10px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
 .cal-modal-close:hover{background:#fff;transform:scale(1.08)}
+.cal-modal-note{flex:0 0 auto;background:var(--bg2);color:var(--ink);font-size:.82rem;font-weight:400;text-align:center;line-height:1.45;padding:.95rem 3rem .95rem 1.2rem;border-bottom:1px solid var(--line)}
+.cal-modal-note strong{font-weight:600}
 .cal-modal-body{flex:1 1 auto;min-height:0;overflow:hidden;padding:0;background:#fff}
 .cal-modal-body iframe{width:100%;height:100%!important;border:0;display:block}
 @media(prefers-reduced-motion:reduce){.cal-modal-dialog{animation:none}}
@@ -630,7 +632,7 @@ header.scrolled .hicon{color:var(--ink)}
     </ul>
     <div class="hero-actions">
       <a href="https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5" target="_blank" rel="noopener" data-book class="btn btn-light">Book a Consultation</a>
-      <a href="tel:+442030867371" class="btn btn-ghost-light">Call us now</a>
+      <a href="#enquire" class="btn btn-ghost-light">Ask a Question</a>
     </div>
     <a class="hero-rating" href="https://www.realself.com/dr/hagen-schumacher-london-united-kingdom#reviews" target="_blank" rel="noopener" aria-label="Read verified reviews on RealSelf">
       <span class="realself-word">realself<i>.</i></span>
@@ -1283,6 +1285,7 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   <div class="cal-modal-backdrop" data-close></div>
   <div class="cal-modal-dialog" role="dialog" aria-modal="true" aria-label="Book a consultation">
     <button class="cal-modal-close" type="button" data-close aria-label="Close">&times;</button>
+    <div class="cal-modal-note">A formal consultation with Hagen is <strong>£250</strong>.</div>
     <div class="cal-modal-body"></div>
   </div>
 </div>
