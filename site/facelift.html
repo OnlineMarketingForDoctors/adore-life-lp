@@ -548,24 +548,17 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .consult-cta p{font-size:1.05rem;color:var(--text);font-weight:300;margin-bottom:1.4rem}
 @media(max-width:760px){.consult-grid{grid-template-columns:1fr}}
 
-/* ---------- light hero + header (match rhinoplasty) ---------- */
-header:not(.scrolled) nav.main a.navlink{color:var(--text)}
-header:not(.scrolled) nav.main a.navlink:hover{color:var(--ink)}
-header:not(.scrolled) .header-phone{color:var(--ink)}
-header:not(.scrolled) .header-phone svg{stroke:var(--accent-d)}
-header:not(.scrolled) .header-cta{color:var(--ink);border-color:rgba(20,18,15,.35)}
-header:not(.scrolled) .burger span{background:var(--ink)}
-header:not(.scrolled) .hicon{color:var(--ink)}
-header:not(.scrolled){background:linear-gradient(180deg,rgba(245,241,234,.97) 0%,rgba(245,241,234,.88) 52%,rgba(245,241,234,.42) 80%,rgba(245,241,234,0) 100%)}
-header:not(.scrolled) nav.main a.navlink,header:not(.scrolled) .header-phone,header:not(.scrolled) .header-cta{text-shadow:0 1px 5px rgba(245,241,234,.75)}
-header.scrolled{background:rgba(245,241,234,.95);box-shadow:0 1px 0 rgba(20,18,15,.08)}
-header.scrolled nav.main a.navlink{color:var(--text)}
-header.scrolled nav.main a.navlink:hover{color:var(--ink)}
-header.scrolled .header-phone{color:var(--ink)}
-header.scrolled .header-cta{color:var(--ink);border-color:rgba(20,18,15,.35)}
-header.scrolled .header-cta:hover{background:var(--ink);color:#fff}
-header.scrolled .burger span{background:var(--ink)}
-header.scrolled .hicon{color:var(--ink)}
+/* ---------- dark nav bar ---------- */
+header{background:var(--ink)}
+header.scrolled{background:rgba(19,17,15,.96);box-shadow:0 1px 0 rgba(255,255,255,.08)}
+header nav.main a.navlink{color:rgba(245,241,234,.82)}
+header nav.main a.navlink:hover{color:#fff}
+header .header-phone{color:#fff}
+header .header-phone svg{stroke:var(--accent-l)}
+header .header-cta{color:#fff;border-color:rgba(255,255,255,.45)}
+header .header-cta:hover{background:#fff;color:var(--ink)}
+header .burger span{background:#f5f1ea}
+header .hicon{color:#f5f1ea}
 .hero{background:var(--bg);color:var(--text)}
 .hero-bg img{object-position:78% center;opacity:1}
 .hero-bg::after{background:linear-gradient(90deg,rgba(245,241,234,.96) 0%,rgba(245,241,234,.72) 34%,rgba(245,241,234,.12) 60%,rgba(245,241,234,0) 80%)}
@@ -594,7 +587,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============ HEADER ============ -->
 <header id="header">
-  <a href="#top" class="logo"><img src="images/adore-ink.png" alt="Adore Life · Hagen Schumacher Plastic Surgeon" /></a>
+  <a href="#top" class="logo"><img src="images/adore-white.png" alt="Adore Life · Hagen Schumacher Plastic Surgeon" /></a>
   <nav class="main">
     <a class="navlink" href="#approach">Approach</a>
     <a class="navlink" href="#results">Results</a>
