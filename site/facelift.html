@@ -527,7 +527,7 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .cal-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(12px,3vw,28px)}
 .cal-modal.open{display:flex}
 .cal-modal-backdrop{position:absolute;inset:0;background:rgba(16,14,12,.62);backdrop-filter:blur(3px)}
-.cal-modal-dialog{position:relative;width:min(520px,96vw);height:min(760px,92vh);background:var(--card);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55);display:flex;flex-direction:column;overflow:hidden;animation:calpop .35s ease}
+.cal-modal-dialog{position:relative;width:min(560px,96vw);max-height:92vh;background:var(--card);border-radius:4px;box-shadow:0 40px 90px -30px rgba(0,0,0,.55);overflow-y:auto;animation:calpop .35s ease}
 @keyframes calpop{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .cal-modal-close{position:absolute;top:8px;right:10px;z-index:2;width:38px;height:38px;border:0;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);font-size:1.5rem;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .25s,transform .25s}
 .cal-modal-close:hover{background:#fff;transform:scale(1.08)}
@@ -536,6 +536,14 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .cal-modal-body{flex:1 1 auto;min-height:0;overflow:hidden;padding:0;background:#fff}
 .cal-modal-body iframe{width:100%;height:100%!important;border:0;display:block}
 @media(prefers-reduced-motion:reduce){.cal-modal-dialog{animation:none}}
+.loc-picker{padding:clamp(2rem,6vw,3.2rem) clamp(1.5rem,5vw,3rem) clamp(2.2rem,6vw,3.4rem)}
+.loc-title{font-family:'Montserrat',sans-serif;font-weight:300;letter-spacing:-.01em;line-height:1.06;font-size:clamp(1.8rem,5.5vw,2.6rem);color:var(--ink)}
+.loc-title em{font-style:normal;color:var(--accent-d)}
+.loc-sub{margin-top:.7rem;color:var(--muted);font-size:clamp(1rem,2.6vw,1.12rem);line-height:1.45}
+.loc-list{display:flex;flex-direction:column;gap:.95rem;margin-top:2rem}
+.loc-btn{display:block;text-align:left;padding:1.05em 1.35em;font-family:'Jost',sans-serif;font-weight:400;font-size:clamp(.95rem,2.6vw,1.05rem);letter-spacing:.01em;border:1px solid var(--ink);background:var(--ink);color:#f5f1ea;transition:background .3s,color .3s,border-color .3s}
+.loc-btn:nth-child(even){background:transparent;color:var(--ink)}
+.loc-btn:hover{background:var(--accent-d);border-color:var(--accent-d);color:#fff}
 /* ---------- your consultation ---------- */
 .consult-grid{max-width:var(--maxw);margin:2.8rem auto 0;display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,2.5vw,2rem)}
 .consult-card{background:var(--card);border:1px solid var(--line);padding:clamp(1.8rem,3vw,2.6rem)}
@@ -1089,27 +1097,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <a class="wa-float" href="https://wa.me/442030867371" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.04.55 4.02 1.6 5.77L4 28l7.34-2.5a11.06 11.06 0 0 0 4.7 1.05h.01c6.11 0 11.07-4.96 11.07-11.07C27.12 8.96 22.15 4 16.04 4zm0 20.27c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-4.36 1.49 1.46-4.25-.2-.31a9.2 9.2 0 0 1-1.41-4.9c0-5.08 4.13-9.21 9.22-9.21 2.46 0 4.78.96 6.52 2.7a9.16 9.16 0 0 1 2.7 6.52c0 5.09-4.13 9.22-9.22 9.22zm5.05-6.9c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.35-.25.28-.96.94-.96 2.3 0 1.36.98 2.67 1.12 2.85.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/></svg></a>
 
 <script>
-// booking modal (GoHighLevel calendar popup)
+// booking modal (location picker)
 document.addEventListener('DOMContentLoaded',function(){
   const modal=document.getElementById('calModal');
   if(!modal)return;
-  const body=modal.querySelector('.cal-modal-body');
-  let loaded=false;
-  function open(){
-    if(!loaded){
-      const f=document.createElement('iframe');
-      f.src='https://api.leadconnectorhq.com/widget/booking/gP6OILBAfsHTGJUOpAU5';
-      f.id='gP6OILBAfsHTGJUOpAU5_'+Date.now();
-      f.setAttribute('title','Book a consultation with Hagen');
-      body.appendChild(f);
-      loaded=true;
-    }
-    modal.classList.add('open');
-    document.body.style.overflow='hidden';
-  }
+  function open(){modal.classList.add('open');document.body.style.overflow='hidden';}
   function close(){modal.classList.remove('open');document.body.style.overflow='';}
   document.querySelectorAll('[data-book]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();open();}));
   modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
+  modal.querySelectorAll('.loc-btn').forEach(el=>el.addEventListener('click',()=>setTimeout(close,80)));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 });
 
@@ -1265,8 +1261,17 @@ document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
   <div class="cal-modal-backdrop" data-close></div>
   <div class="cal-modal-dialog" role="dialog" aria-modal="true" aria-label="Book a consultation">
     <button class="cal-modal-close" type="button" data-close aria-label="Close">&times;</button>
-    <div class="cal-modal-note">A formal consultation with Hagen is <strong>£250</strong>.</div>
-    <div class="cal-modal-body"></div>
+    <div class="loc-picker">
+      <h2 class="loc-title">Book a <em>consultation.</em></h2>
+      <p class="loc-sub">Please select your preferred practice below:</p>
+      <div class="loc-list">
+        <a class="loc-btn" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ1r8I-2wr4S3DdGQ5zN8p9wY0iAHaaeksj_LOb6hbgKv7k7fYDJVY-lvNQXU483qnzicQlYvMrQ" target="_blank" rel="noopener">Consultation London, 152 Harley Street</a>
+        <a class="loc-btn" href="https://calendar.app.google/GwZwdAh4tyiC4LZy9" target="_blank" rel="noopener">Consultation London Knightsbridge</a>
+        <a class="loc-btn" href="https://calendar.app.google/3bfb7WEitAaYXUJf6" target="_blank" rel="noopener">Consultation London, 101 Harley Street</a>
+        <a class="loc-btn" href="https://calendar.app.google/vN8GH8XyUSZMHPkKA" target="_blank" rel="noopener">Consultation in Cambridge</a>
+        <a class="loc-btn" href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ34hTrMGO-JTd6KG8tWbfEvTyGsBZKtA_oTysOmkTJa5aTpRifghsceQfA8d2ELOZOrEgkfDOhQ" target="_blank" rel="noopener">Virtual Consultation</a>
+      </div>
+    </div>
   </div>
 </div>
 <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
