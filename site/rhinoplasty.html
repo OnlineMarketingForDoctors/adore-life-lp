@@ -1253,7 +1253,7 @@ function renderBA(){
     card.querySelector('.pt').textContent=data.pt;
     card.querySelector('.pp').textContent=data.pp;
   }
-  document.querySelectorAll('.ba-dot').forEach((d,i)=>d.classList.toggle('active',i===baPage));
+  dotsWrap.querySelectorAll('.ba-dot').forEach((d,i)=>d.classList.toggle('active',i===baPage));
 }
 document.getElementById('baNext').addEventListener('click',()=>{baPage=(baPage+1)%pages;renderBA();});
 document.getElementById('baPrev').addEventListener('click',()=>{baPage=(baPage-1+pages)%pages;renderBA();});
