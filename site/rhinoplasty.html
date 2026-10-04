@@ -501,6 +501,12 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .wa-float:hover{transform:scale(1.07);box-shadow:0 12px 30px rgba(0,0,0,.32)}
 .wa-float svg{width:32px;height:32px;fill:#fff}
 @media(max-width:600px){.wa-float{width:52px;height:52px;right:18px;bottom:18px}.wa-float svg{width:30px;height:30px}}
+/* ---------- back to top ---------- */
+.to-top{position:fixed;right:24px;bottom:94px;width:48px;height:48px;border-radius:50%;border:0;cursor:pointer;background:var(--ink);color:#f5f1ea;display:flex;align-items:center;justify-content:center;z-index:90;box-shadow:0 8px 22px rgba(0,0,0,.22);opacity:0;visibility:hidden;transform:translateY(10px);transition:opacity .3s,transform .3s,visibility .3s,background .3s}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--accent-d);transform:translateY(-2px)}
+.to-top svg{width:20px;height:20px}
+@media(max-width:600px){.to-top{right:18px;bottom:80px;width:46px;height:46px}.to-top svg{width:19px;height:19px}}
 
 /* ---------- reveal animation ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .9s ease,transform .9s ease}
@@ -1110,6 +1116,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
+<button class="to-top" id="toTop" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
 <a class="wa-float" href="https://wa.me/442030867371" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp"><svg viewBox="0 0 32 32"><path d="M16.04 4C9.93 4 4.97 8.96 4.97 15.07c0 2.04.55 4.02 1.6 5.77L4 28l7.34-2.5a11.06 11.06 0 0 0 4.7 1.05h.01c6.11 0 11.07-4.96 11.07-11.07C27.12 8.96 22.15 4 16.04 4zm0 20.27c-1.5 0-2.97-.4-4.25-1.16l-.3-.18-4.36 1.49 1.46-4.25-.2-.31a9.2 9.2 0 0 1-1.41-4.9c0-5.08 4.13-9.21 9.22-9.21 2.46 0 4.78.96 6.52 2.7a9.16 9.16 0 0 1 2.7 6.52c0 5.09-4.13 9.22-9.22 9.22zm5.05-6.9c-.28-.14-1.64-.81-1.89-.9-.25-.09-.43-.14-.62.14-.18.28-.71.9-.87 1.08-.16.18-.32.2-.6.07-.28-.14-1.17-.43-2.23-1.38-.82-.73-1.38-1.64-1.54-1.92-.16-.28-.02-.43.12-.57.13-.13.28-.32.42-.48.14-.16.18-.28.28-.46.09-.18.05-.35-.02-.49-.07-.14-.62-1.5-.85-2.05-.22-.53-.45-.46-.62-.47l-.53-.01c-.18 0-.48.07-.73.35-.25.28-.96.94-.96 2.3 0 1.36.98 2.67 1.12 2.85.14.18 1.93 2.95 4.68 4.13.65.28 1.16.45 1.56.58.65.21 1.25.18 1.72.11.52-.08 1.64-.67 1.87-1.32.23-.65.23-1.2.16-1.32-.07-.12-.25-.18-.53-.32z"/></svg></a>
 
 <script>
@@ -1151,6 +1159,16 @@ const mobileNav=document.getElementById('mobileNav');
 document.getElementById('burger').addEventListener('click',()=>mobileNav.classList.add('open'));
 document.getElementById('mclose').addEventListener('click',()=>mobileNav.classList.remove('open'));
 mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileNav.classList.remove('open')));
+
+// back to top
+(function(){
+  const bt=document.getElementById('toTop');
+  if(!bt)return;
+  const toggle=()=>bt.classList.toggle('show', window.scrollY>600);
+  window.addEventListener('scroll',toggle,{passive:true});
+  toggle();
+  bt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+})();
 
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(q=>{
