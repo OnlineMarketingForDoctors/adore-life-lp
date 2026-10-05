@@ -1109,11 +1109,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 document.addEventListener('DOMContentLoaded',function(){
   const modal=document.getElementById('calModal');
   if(!modal)return;
-  function open(){modal.classList.add('open');document.body.style.overflow='hidden';}
+  var BOOK_PROCEDURE='Facelift';
+  function track(ev,extra){
+    window.dataLayer=window.dataLayer||[];
+    var d={event:ev,procedure:BOOK_PROCEDURE};
+    if(extra){for(var k in extra){d[k]=extra[k];}}
+    try{window.dataLayer.push(d);}catch(e){}
+  }
+  function open(){modal.classList.add('open');document.body.style.overflow='hidden';track('book_modal_open');}
   function close(){modal.classList.remove('open');document.body.style.overflow='';}
   document.querySelectorAll('[data-book]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();open();}));
   modal.querySelectorAll('[data-close]').forEach(el=>el.addEventListener('click',close));
-  modal.querySelectorAll('.loc-btn').forEach(el=>el.addEventListener('click',()=>setTimeout(close,80)));
+  modal.querySelectorAll('.loc-btn').forEach(el=>el.addEventListener('click',function(){
+    track('book_appointment',{booking_location:(el.textContent||'').trim(),booking_method:'google_calendar',link_url:el.href});
+    setTimeout(close,80);
+  }));
   document.addEventListener('keydown',e=>{if(e.key==='Escape')close();});
 });
 
