@@ -566,13 +566,12 @@ footer{background:#100e0c;color:#cfc8bd;padding:clamp(3.5rem,6vw,5.5rem) var(--p
 .meet-video{display:block;position:relative;width:100%;padding:0;border:0;background:none;cursor:pointer;overflow:hidden}
 .meet-video img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block;transition:transform 1.2s ease}
 .meet-video:hover img{transform:scale(1.04)}
-.meet-video::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(12,11,10,0) 55%,rgba(12,11,10,.4));transition:background .4s}
-.meet-video:hover::after{background:linear-gradient(rgba(12,11,10,.12) 35%,rgba(12,11,10,.52))}
-.meet-video .play-btn{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:rgba(245,241,234,.92);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 12px 32px rgba(0,0,0,.3);transition:transform .35s ease,background .35s}
-.meet-video:hover .play-btn{transform:translate(-50%,-50%) scale(1.08);background:#fff}
-.meet-video .play-btn svg{width:30px;height:30px;margin-left:4px;fill:var(--ink)}
-.meet-video-cap{display:flex;align-items:center;gap:.6em;margin-top:1.1rem;font-size:.92rem;color:var(--muted);font-weight:300}
-.meet-video-cap svg{width:18px;height:18px;fill:var(--accent-d);flex:0 0 auto}
+.meet-video::after{content:"";position:absolute;top:0;left:0;right:0;height:42%;background:linear-gradient(rgba(245,241,234,.55),rgba(245,241,234,0));z-index:1;pointer-events:none}
+.meet-video-overlay{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:.85rem;padding:1.15rem 1.3rem;z-index:2}
+.meet-video .play-btn{flex:0 0 auto;width:52px;height:52px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.28);transition:transform .35s ease,background .35s}
+.meet-video:hover .play-btn{transform:scale(1.08);background:var(--accent-d)}
+.meet-video .play-btn svg{width:22px;height:22px;margin-left:3px;fill:#f5f1ea}
+.meet-video-cap{font-size:.9rem;line-height:1.3;color:var(--ink);font-weight:500}
 .video-modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:clamp(14px,3vw,36px)}
 .video-modal.open{display:flex}
 .video-modal-backdrop{position:absolute;inset:0;background:rgba(10,9,8,.84);backdrop-filter:blur(4px)}
@@ -862,9 +861,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="meet-imgs reveal">
       <button type="button" class="meet-video" data-video-open aria-label="Play video: Watch Hagen talk about recent trends in eyelid surgery">
         <img class="main" src="images/web/meet-hagen.jpg" alt="Hagen Schumacher" />
-        <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+        <span class="meet-video-overlay">
+          <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+          <span class="meet-video-cap">Watch Hagen talk about recent trends in eyelid surgery</span>
+        </span>
       </button>
-      <p class="meet-video-cap"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch Hagen talk about recent trends in eyelid surgery</p>
     </div>
     <div class="meet-body reveal">
       <span class="eyebrow">Your surgeon</span>
